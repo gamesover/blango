@@ -47,6 +47,7 @@ class Dev(Configuration):
         'django.contrib.contenttypes',
         'django.contrib.sessions',
         'django.contrib.messages',
+        "django.contrib.sites",
         'django.contrib.staticfiles',
         'rest_framework',
         'rest_framework.authtoken',
@@ -55,9 +56,18 @@ class Dev(Configuration):
         "crispy_forms",
         "debug_toolbar",
         'django_registration',
-        "crispy_bootstrap5"
+        "crispy_bootstrap5",
+        "allauth", 
+        "allauth.account", 
+        "allauth.socialaccount", 
+        "allauth.socialaccount.providers.google"
     ]
 
+    SITE_ID = 1
+    ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+    ACCOUNT_EMAIL_REQUIRED = True
+    ACCOUNT_USERNAME_REQUIRED = False
+    ACCOUNT_AUTHENTICATION_METHOD = "email"
     MIDDLEWARE = [
         "debug_toolbar.middleware.DebugToolbarMiddleware",
         'django.middleware.security.SecurityMiddleware',
