@@ -50,6 +50,7 @@ class Dev(Configuration):
         'rest_framework',
         'rest_framework.authtoken',
         "blog",
+        "blango_auth",
         "crispy_forms",
         "debug_toolbar",
         "crispy_bootstrap5"
@@ -80,6 +81,7 @@ class Dev(Configuration):
     ROOT_URLCONF = 'blango.urls'
 
     INTERNAL_IPS = ["192.168.10.226"]
+    AUTH_USER_MODEL = "blango_auth.User"
 
     TEMPLATES = [
         {
