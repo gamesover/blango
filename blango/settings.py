@@ -53,6 +53,7 @@ class Dev(Configuration):
         'rest_framework.authtoken',
         "blog",
         "blango_auth",
+        'drf_yasg',
         "crispy_forms",
         "debug_toolbar",
         'django_registration',
@@ -94,6 +95,13 @@ class Dev(Configuration):
 
     INTERNAL_IPS = ["192.168.10.226"]
     AUTH_USER_MODEL = "blango_auth.User"
+
+    SWAGGER_SETTINGS = {
+        "SECURITY_DEFINITIONS": {
+            "Token": {"type": "apiKey", "name": "Authorization", "in": "header"},
+            "Basic": {"type": "basic"},
+        }
+    }
 
     TEMPLATES = [
         {
