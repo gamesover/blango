@@ -37,7 +37,8 @@ class Dev(Configuration):
     CSRF_COOKIE_SAMESITE = 'None'
     SESSION_COOKIE_SAMESITE = 'None'
 
-
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    ACCOUNT_ACTIVATION_DAYS = 7
     # Application definition
 
     INSTALLED_APPS = [
@@ -53,6 +54,7 @@ class Dev(Configuration):
         "blango_auth",
         "crispy_forms",
         "debug_toolbar",
+        'django_registration',
         "crispy_bootstrap5"
     ]
 
