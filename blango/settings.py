@@ -51,10 +51,12 @@ class Dev(Configuration):
         'rest_framework.authtoken',
         "blog",
         "crispy_forms",
+        "debug_toolbar",
         "crispy_bootstrap5"
     ]
 
     MIDDLEWARE = [
+        "debug_toolbar.middleware.DebugToolbarMiddleware",
         'django.middleware.security.SecurityMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.middleware.common.CommonMiddleware',
@@ -76,6 +78,8 @@ class Dev(Configuration):
     }
 
     ROOT_URLCONF = 'blango.urls'
+
+    INTERNAL_IPS = ["192.168.10.226"]
 
     TEMPLATES = [
         {
